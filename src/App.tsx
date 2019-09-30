@@ -1,6 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+
+import { Text } from './components'
+
+import './App.css'
 
 const App: React.FC = () => {
   return (
@@ -18,9 +21,10 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
+        <Text />
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
