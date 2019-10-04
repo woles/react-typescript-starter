@@ -29,7 +29,7 @@ describe('SearchableList component tests', () => {
     const event = {
       target: {
         value: 'on',
-      }
+      },
     }
     await act(async () => {
       input.props.onChange(event)

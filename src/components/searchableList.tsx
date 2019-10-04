@@ -4,21 +4,25 @@ type SearchableListProps = {
   list: string[],
 }
 
-export const SearchableList: React.SFC<SearchableListProps> = ({ list }) => {
+export const SearchableList: React.FC<SearchableListProps> = ({ list }) => {
 
-  const [search, setSearch] = useState('')
-  const [actualList, setActualList] = useState(list)
+  const [state, setState] = useState({
+    actualList: list,
+    search: '',
+  })
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value)
-    setActualList(list.filter((item) => item.indexOf(event.target.value) >= 0))
+    setState({
+      actualList: list.filter((item) => item.indexOf(event.target.value) >= 0),
+      search: event.target.value,
+    })
   }
 
   return (
     <>
-      <input type="text" value={search} onChange={handleChange} />
+      <input type="text" value={state.search} onChange={handleChange} />
       <ul>
-        {actualList.map((value, index) => <li key={index}>{value}</li>)}
+        {state.actualList.map((value, index) => <li key={index}>{value}</li>)}
       </ul>
     </>
   )

@@ -9,3 +9,12 @@ Includes git hooks with husky, linter and component tests.
 ## Install
 
     npm install
+
+Change line in package.json from
+
+    "test": "react-scripts test --watchAll=false",
+
+to:
+
+    "test": "react-scripts test",
+
