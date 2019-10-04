@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const text = 'TEST COMPONENT'
 
-export const Text: React.SFC<{}> = () => {
+export const Text: React.FC<{}> = () => {
 
   const [showText, setShowText] = useState(true)
 
